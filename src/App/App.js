@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <h2>INSIDE APP COMPONENT</h2>
-        <button className="btn btn-info">I am a button</button>
-      </div>
-    );
-  }
-}
+const App = () => {
+  const [counter, setCounter] = useState(0);
+
+  return (
+    <div className="App m-auto">
+      <h2>Click Count:</h2>
+      <h3>{counter}</h3>
+      <button className="btn btn-success" onClick={() => setCounter(counter + 1)}>Click Me</button>
+    </div>
+  );
+};
 
 export default App;
